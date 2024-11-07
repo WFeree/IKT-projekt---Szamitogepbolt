@@ -1,0 +1,23 @@
+3. csapattag (Alkatrészek leírása):
+
+Készíts weblapot, amelyen a választható alkatrészek részletes leírását lehet megtekinteni.
+
+Legalább minden fajta alkatrészből legyen 5 darab a weblapon lehetőleg!
+
+A weblap a következőképpen működjön:
+
+· Legyen reszponzív!
+
+· Legyen kiegészítve a termék egy újabb paraméterrel, a hosszabb leírással! A termékeknek csak a neve és rövid leírása látszódjon, és amikor rákattintunk, vagy mellette lévő gombra kattintunk, akkor jöjjön elő a termék további leírása!
+
+· Legyen a weblapnak egy olyan funkciója, amikor két ugyanolyan kategóriájú terméket egymás mellé lehet tenni, és a paramétereit össze lehet hasonlítani! Ez a weblap külön részén legyen megoldva!
+
+Ötletek plusz, kiegészítő funkciókra (nem kötelező mindet megvalósítani):
+
+· Az adatok egy részét ne kézzel, hanem az 1. csapattagtól kapott txt állományból vegye át! (Képeket lehet külön)
+
+· Az ár vagy valamelyik paraméter összehasonlításánál külön színnel legyen jelezve az előnyösebb (pl. árnál az olcsóbb, memória méretnél a nagyobb méret). Ezt elég 1 paraméter összehasonlítására.
+
+· Bizonyos termékeknél (például videókártya), a külön gyártók külön színnel legyenek kiemelve (például Nvidia zöld, AMD piros)
+
+· Keresés adott termékre, és a keresési találatok megjelenítése.
