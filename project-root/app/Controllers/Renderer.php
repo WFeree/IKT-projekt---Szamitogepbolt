@@ -12,7 +12,7 @@ class Renderer extends BaseController
         }
 
         $meta = [
-            "title" => "PC Part Picker",
+            "title" => $extra_data["title"] ?? "PC Part Picker",
             "cssfiles" => $extra_data["cssfiles"] ?? [],
         ];
         $context = $extra_data;
