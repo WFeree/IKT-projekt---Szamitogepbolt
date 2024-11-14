@@ -27,6 +27,7 @@ keresd meg a xampp/apache/conf/extra/httpd-vhosts.conf file-t és másold bele, 
 	</Directory>
 </VirtualHost>
 -------------
+itt cseréld ki az útvonalakat a project-root-on belüli public folderre, ami a te gépeden van!
 
 4. hosts
 mentj fájlkezelővel a C:\Windows\system32\drivers\etc mappába. itt jobb klikk a hosts fájlra, majd tulajdonságok->biztonság->szerkesztés->hozzáadás->add magad hozzá és engedélyezz minden jogosultságot.
