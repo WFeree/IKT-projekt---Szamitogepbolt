@@ -31,15 +31,12 @@ Options -Indexes
 	# request to the front controller, index.php
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^([\s\S]*)$ index.php?/$1 [L,NC,QSA]
-	# Remove index.php from URL
-	RewriteCond %{HTTP:X-Requested-With}    !^XMLHttpRequest$
-	RewriteCond %{THE_REQUEST}              ^[^/]*/index\.php [NC]
-	RewriteRule ^index\.php?(.*)$            $1 [R=301,NS,L]
+	RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
 
 	# Ensure Authorization header is passed along
 	RewriteCond %{HTTP:Authorization} .
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -49,5 +46,5 @@ Options -Indexes
 </IfModule>
 
 # Disable server signature start
-	ServerSignature Off
+ServerSignature Off
 # Disable server signature end
