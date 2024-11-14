@@ -1,3 +1,4 @@
+A XAMPP-od mindeképp legyen PHP 8.1 vagy afölött!!
 1. adatbázis:
 ------------
 create database pcparts default character set utf8 collate utf8_hungarian_ci;
