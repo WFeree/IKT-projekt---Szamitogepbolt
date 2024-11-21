@@ -4,7 +4,7 @@ A XAMPP-od mindeképp legyen PHP 8.1 vagy afölött!!
 create database pcparts default character set utf8 collate utf8_hungarian_ci;
 use pcparts;
 create table components(
-	id bigint primary key,
+	id bigint primary key auto_increment,
     name varchar(255) unique,
     details text,
     category ENUM('Motherboard','CPU','Memory','GPU','Drive','Display','Mouse','Keyboard'),
