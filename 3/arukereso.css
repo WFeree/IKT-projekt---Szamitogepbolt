@@ -20,6 +20,7 @@ body{
     font-family: 'Inter', sans-serif;
 }
 nav{
+    width: 100vw;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -27,7 +28,7 @@ nav{
     align-items: center;
     padding: 0rem 1rem;
     #nav-logo{
-        max-width: 190px;
+        max-width: 160px;
     }
     #compare{
         background-color: var(--prim-red);
@@ -54,31 +55,76 @@ nav{
         justify-content: center;
         width: 90%;
         height: fit-content;
-        border: 1px solid var(--prim-red);
-        background-color: white;
         border-radius: 1rem;
         padding: 1rem;
         row-gap: 1rem;
-        .card{
-            min-width: 100%;
-            border: 1px solid var(--sec-red);
-            border-radius: 12px;
-            padding: 12px;
-            height: 300px;
-            background-color: var(--grey);
-            input[type="checkbox"]{
-                top: 12px;
+    }
+}
+.card{
+    min-width: 100%;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: fit-content;
+    height: 300px;
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    display: block;
+    .card-top{
+        height: 120px;
+        input[type="checkbox"]{
+            top: 12px;
+        }
+        .prod-img{
+            width: 120px;
+            height: auto;
+            float: right;
+        }
+    }
+    .card-mid{
+        .prod-name{
+            font-size: 22px;
+        }
+        .prod-detail{
+            .detail-elem{
+                display: flex;
+                gap: .5rem;
+                .detail-type{
+                    color: rgb(139, 139, 139);
+                }
+                .detail-more{
+                    text-decoration: underline;
+                    color: var(--sec-red);
+                    cursor: pointer;
+                }
             }
-            .prod-img{
-                width: 120px;
-                height: auto;
-                float: right;
+            .detail-wrapper{
+                display: flex;
+                justify-content: space-between;
             }
+        }
+    }
+    .card-bot{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: .3rem 0;
+        .prod-select{
+            padding: .5rem 1rem;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--prim-red);
+            color: white;
+            font-weight: bold;
+        }
+        .prod-price{
+            font-size: 22px;
         }
     }
 }
 /* BRANDS */
-
+.brand{
+    margin: .5rem 0;
+}
 .nvidia{
     color: var(--nivida-green);
     background-color: var(--nvidia-bg);
