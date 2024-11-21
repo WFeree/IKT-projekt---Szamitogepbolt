@@ -7,6 +7,9 @@
     --prim-red: #E61F26;
     --sec-red: #b10006;
     --grey: #f0f0f0;
+
+    --nivida-green: #26790C;
+    --nvidia-bg: rgba(15,176,0,.28);
     --gap: 1rem;
 }
 body{
@@ -17,14 +20,14 @@ body{
     font-family: 'Inter', sans-serif;
 }
 nav{
-    height: 10vh;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0rem 1rem;
     #nav-logo{
-        width: 190px;
+        max-width: 190px;
     }
     #compare{
         background-color: var(--prim-red);
@@ -37,32 +40,50 @@ nav{
     #compare:hover{
         background-color: var(--sec-red);
         cursor: pointer;
-        
     }
 }
-.content{
-    padding: var(--gap);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: var(--gap);
-    min-height: fit-content;
-    .content-element{
-        border-radius: 12px;
-        width: 100%;
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 1rem 0;
+    .cards-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: fit-content;
+        border: 1px solid var(--prim-red);
         background-color: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        row-gap: 1rem;
+        .card{
+            min-width: 100%;
+            border: 1px solid var(--sec-red);
+            border-radius: 12px;
+            padding: 12px;
+            height: 300px;
+            background-color: var(--grey);
+            input[type="checkbox"]{
+                top: 12px;
+            }
+            .prod-img{
+                width: 120px;
+                height: auto;
+                float: right;
+            }
+        }
     }
 }
-main{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: var(--gap);
-    column-gap: var(--gap);
-    padding: var(--gap);
-    .card{
-        border-radius: 8px;
-        width: 100%;
-        height: 300px;
-        border: 1px solid var(--grey);
-        background-color: white;
-    }
+/* BRANDS */
+
+.nvidia{
+    color: var(--nivida-green);
+    background-color: var(--nvidia-bg);
+    border-radius: 30px;
+    font-size: 12px;
+    padding: .5rem 1rem;
+    width: fit-content;
 }
