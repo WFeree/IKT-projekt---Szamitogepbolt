@@ -1,7 +1,9 @@
-<form action="/create" method="post">
+<form action="/create" method="post" enctype='multipart/form-data'>
     <?= csrf_field(); ?>
     <label for="name">name</label>
     <input type="text" id="name" name="name"><br>
+    <label for="brand">brand</label>
+    <input type="text" id="brand" name="brand"><br>
     <label for="cat">Category</label>
     <select name="category" id="cat">
         <?php foreach($options as $option): ?>
@@ -16,8 +18,8 @@
 
     <label for="rating">Rating</label>
     <input type="number" name="rating" id="rating" step="0.1", max="5", min="0">
-
+    <input type="file" name="picture">
     <input type="submit" value="Send">
 
 </form>
-<?= isset(session()->ferror) ? session()->ferror : "" ?>
+<?= isset(session()->ferror) ? var_dump(session()->ferror) : "" ?>

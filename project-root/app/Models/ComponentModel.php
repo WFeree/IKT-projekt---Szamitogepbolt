@@ -8,10 +8,12 @@ class ComponentModel extends Model
     protected $allowedFields = [
         "id",
         "name",
+        "brand",
         "details",
         "category",
         "price",
         "rating",
+        "file_upload"
     ];
     protected $primaryKey = "id";
     protected $useAutoIncrement = true;
@@ -35,5 +37,8 @@ class ComponentModel extends Model
         }
 
         return null;  // Return null if no enum column found or if query fails
+    }
+    public function getAll(){
+        return $this->findAll();
     }
 }

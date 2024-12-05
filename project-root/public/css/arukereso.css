@@ -3,9 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-::-webkit-scrollbar{
-    display: none;
-}
 :root{
     --prim-red: #E61F26;
     --sec-red: #b10006;
@@ -52,7 +49,6 @@ nav{
     width: 100%;
     height: 100%;
     margin: 1rem 0;
-    box-sizing: border-box;
     .cards-wrapper{
         display: flex;
         flex-direction: column;

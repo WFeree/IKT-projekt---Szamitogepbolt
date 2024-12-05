@@ -3,14 +3,18 @@ A XAMPP-od mindeképp legyen PHP 8.1 vagy afölött!!
 ------------
 create database pcparts default character set utf8 collate utf8_hungarian_ci;
 use pcparts;
-create table components(
-	id bigint primary key auto_increment,
-    name varchar(255) unique,
-    details text,
-    category ENUM('Motherboard','CPU','Memory','GPU','Drive','Display','Mouse','Keyboard'),
-    price float(8,2),
-    rating float(2,2)
-);
+CREATE TABLE `components` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `brand` varchar(100) NOT NULL,
+  `details` text DEFAULT NULL,
+  `category` enum('Motherboard','CPU','Memory','GPU','Drive','Display','Mouse','Keyboard') DEFAULT NULL,
+  `price` float(10,2) DEFAULT NULL,
+  `rating` float(4,2) DEFAULT NULL,
+  `file_upload` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci
 -------------
 2.
 xampp control panel -> apache -> config -> php.ini -> keresd meg a sort, ahol ";extension=intl" van írva és töröld a sor elejéről a ";"-t
