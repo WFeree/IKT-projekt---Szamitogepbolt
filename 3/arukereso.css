@@ -119,10 +119,30 @@ nav{
             background-color: var(--prim-red);
             color: white;
             font-weight: bold;
+            transition-duration: .2s;
+        }
+        .prod-select:hover{
+            background-color: var(--sec-red);
+            cursor: pointer;
         }
         .prod-price{
             font-size: 22px;
         }
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .container .cards-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .container .cards-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1rem;
     }
 }
 /* BRANDS */
