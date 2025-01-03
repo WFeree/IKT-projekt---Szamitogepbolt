@@ -14,7 +14,8 @@
     <input type="number" name="price" id="price"><br>
 
     <label for="details">Details</label>
-    <textarea name="details" id="details"></textarea><br>
+    <button type="button" onclick="addDetail()">Add detail</button>
+    <div class="details"></div>
 
     <label for="rating">Rating</label>
     <input type="number" name="rating" id="rating" step="0.1", max="5", min="0">
@@ -23,3 +24,5 @@
 
 </form>
 <?= isset(session()->ferror) ? var_dump(session()->ferror) : "" ?>
+
+<script src="js/createjs.js"></script>

@@ -7,5 +7,6 @@
     <?php foreach($cssfiles as $cssfile): ?>
         <link rel="stylesheet" href="/css/<?= $cssfile; ?>.css">
     <?php endforeach; ?>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
 </head>
 <body>
