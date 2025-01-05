@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="partPicker.css">
 </head>
 <body>
+
+    <div class="cart-shadow-overlay"></div>
+    <nav>
+        <img src="../3/src/logo_big.png" alt="Logo" class="nav-elements" id="nav-logo">
+        <!-- Shopping cart -->
+        <!-- <div class="nav-elements"><div class="circle"></div></div> -->
+    </nav>
     <div class="container">
         <div class="categories">
-            <p></p>
-            <p></p>
-            <p></p>
+            <p>Selection</p>
+            <p>Base</p>
+            <p>Tax</p>
+            <p>Price</p>
         </div>
         <div class="item-row">
             <div class="item">
@@ -78,6 +86,22 @@
             </div>
         </div>
     </div>
+
+    <div class="cart-icon" onclick="toggleOverlay()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="cart-count">
+            <p class="cart-num">0</p>
+        </div>
+    </div>
+    <div class="cart-overlay">
+        <div class="item-section">
+
+        </div>
+        <div class="build-section">
+            <button>Ready To Build!</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/3b31cb99f3.js" crossorigin="anonymous"></script>
     <script src="partPicker.js"></script>
 </body>
 </html>
