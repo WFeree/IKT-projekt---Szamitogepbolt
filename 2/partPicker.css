@@ -86,13 +86,8 @@ body {
     color: rgb(157, 157, 157);
     border-bottom: 2px solid rgb(157, 157, 157);
     margin-bottom: 3%;
-
 }
 
-.categories p{
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
 .cart-icon {
     position: fixed;
@@ -339,6 +334,18 @@ nav{
     display: flex;
     padding: 10px;
     animation: grow 0.3s
+}
+
+.selected-piece{
+    width: 90%;
+    height: 100%;
+    display: none;
+}
+
+.selected-piece.active{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @keyframes grow {

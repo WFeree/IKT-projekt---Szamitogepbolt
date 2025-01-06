@@ -158,6 +158,9 @@ addPartBtns.forEach(btn => {
 
 // Megváltás Történt (Működik a kódom)
 
+let showedPieces = document.querySelectorAll(".selected-piece")
+
+
 function deleteActive(element) {
     let fullParent = element.parentElement.parentElement.parentElement
     console.log(element.parentElement.parentElement.parentElement)
@@ -171,7 +174,22 @@ function deleteActive(element) {
             data[i].name = fullParent.querySelector(".prod-name").innerText
 
             data[i].rating = fullParent.querySelector(".review").children.length
+
+            
         }
         
+    }
+
+    for (let i = 0; i < data.length; i++) {
+        let piece = showedPieces[i]
+        if (fullParent.classList.contains(data[i].parentId)) {
+            console.log(data[i].parentId)
+            piece.children[0].innerText = data[i].name
+            piece.children[1].innerText = data[i].brand
+            piece.children[2].innerText = data[i].rating
+            piece.children[3].innerText = data[i].price
+            piece.classList.add("active")
+            
+        }
     }
 }
