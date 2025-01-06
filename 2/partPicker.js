@@ -1,3 +1,67 @@
+// A következő 8 object az emberiség legszégyenteljesebb adattárolási módja de túl fáradt vagyok és túl este van hogy jobbra csináljam :p
+
+let data = [
+    Motherboard = {
+        parentId: "0",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Processor = {
+        parentId: "1",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Memory = {
+        parentId: "2",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Graphics = {
+        parentId: "3",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    HDD = {
+        parentId: "4",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Monitor = {
+        parentId: "5",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Mouse = {
+        parentId: "6",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    },
+    Keyboard = {
+        parentId: "7",
+        name: "",
+        brand: "",
+        rating: "",
+        price: ""
+    }
+]
+
+
+
+
 const cartIcon = document.querySelector('.cart-icon');
 const cartCount = document.querySelector('.cart-num');
 const overlay = document.querySelector('.cart-overlay');
@@ -91,13 +155,23 @@ addPartBtns.forEach(btn => {
     })
 });
 
-const prodSelects = document.querySelectorAll(".prod-select")
-const partPicks = document.querySelectorAll(".part-pick")
 
-prodSelects.forEach(prod => {
-    prod.addEventListener("click", ()=>{
-        partPicks.forEach(part => {
-            part.classList.remove("active")
-        });
-    })
-});
+// Megváltás Történt (Működik a kódom)
+
+function deleteActive(element) {
+    let fullParent = element.parentElement.parentElement.parentElement
+    console.log(element.parentElement.parentElement.parentElement)
+    fullParent.classList.remove("active")
+    for (let i = 0; i < data.length; i++) {
+        if (fullParent.classList.contains(data[i].parentId)) {
+            data[i].price = fullParent.querySelector(".prod-price").innerText
+            
+            data[i].brand = fullParent.querySelector(".brand").innerText
+
+            data[i].name = fullParent.querySelector(".prod-name").innerText
+
+            data[i].rating = fullParent.querySelector(".review").children.length
+        }
+        
+    }
+}
