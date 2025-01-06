@@ -25,13 +25,13 @@ class Renderer extends BaseController
     public function selector(){
         $CompModel = new ComponentModel();
         $extra = [
-            "cssfiles" => ["arukereso"],
+            "cssfiles" => ["partPicker"],
             "components" => $CompModel->getAll()
         ];
         foreach($extra["components"] as &$c){
             $c["file"] = $c["id"] . "/" . $c["file_upload"];
         }
-        return $this->show("arukereso", $extra);
+        return $this->show("partPicker", $extra);
     }
     public function create_GET(){
         $ComponentM = new ComponentModel();
