@@ -54,17 +54,6 @@ function updateCartOverlay() {
     });
 }
 
-document.querySelectorAll('.card').forEach(card => {
-    const button = card.querySelector('button');
-    const itemName = card.querySelector('.item-name').textContent;
-    const itemPrice = parseFloat(card.querySelector('.price').textContent);
-    const itemImg = card.querySelector('.food-img').src;
-
-    button.addEventListener('click', () => {
-        addToCart(itemName, itemPrice, itemImg);
-    });
-});
-
 const essential = document.querySelector(".essential")
 const other = document.querySelector(".other")
 const tabs = document.querySelectorAll(".tab")
@@ -86,5 +75,29 @@ tabs.forEach(tab => {
             optional.classList.remove("active-items")
             necessary.classList.add("active-items")
         }
+    })
+});
+
+const addPartBtns = document.querySelectorAll("#add-part")
+
+addPartBtns.forEach(btn => {
+    btn.addEventListener("click", () =>{
+        let selectedClass = btn.textContent.split(" ")[2]
+        console.log(selectedClass)
+        let selectedClassParts = document.querySelector(`.${selectedClass}`)
+
+        selectedClassParts.classList.add("active")
+        btn.classList.add("hidden")
+    })
+});
+
+const prodSelects = document.querySelectorAll(".prod-select")
+const partPicks = document.querySelectorAll(".part-pick")
+
+prodSelects.forEach(prod => {
+    prod.addEventListener("click", ()=>{
+        partPicks.forEach(part => {
+            part.classList.remove("active")
+        });
     })
 });
