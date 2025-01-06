@@ -64,3 +64,27 @@ document.querySelectorAll('.card').forEach(card => {
         addToCart(itemName, itemPrice, itemImg);
     });
 });
+
+const essential = document.querySelector(".essential")
+const other = document.querySelector(".other")
+const tabs = document.querySelectorAll(".tab")
+const necessary = document.querySelector(".necessary")
+const optional = document.querySelector(".optional")
+
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        if (essential.classList.contains("active")) {
+            essential.classList.remove("active")
+            other.classList.add("active")
+            necessary.classList.remove("active-items")
+            optional.classList.add("active-items")
+        }
+        else{
+            other.classList.remove("active")
+            essential.classList.add("active")
+            optional.classList.remove("active-items")
+            necessary.classList.add("active-items")
+        }
+    })
+});

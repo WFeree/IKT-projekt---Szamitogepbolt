@@ -13,14 +13,18 @@ body {
     justify-content: center;
     height: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
+    
 }
 
 .container{
-    margin: 5%;
+    margin: 1%;
+    margin-top: 0;
     background-color: #EBEBEB;
     width: 90vw;
     padding: 50px;
     border-radius: 10px;
+    border-top-left-radius: 0;
 }
 
 /* Row Design */
@@ -73,11 +77,16 @@ body {
     display: flex;
     width: 100%;
     align-self: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: rgb(157, 157, 157);
     border-bottom: 2px solid rgb(157, 157, 157);
     margin-bottom: 3%;
 
+}
+
+.categories p{
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .cart-icon {
@@ -202,4 +211,40 @@ nav{
         margin-left: 0.5%;
         max-width: 160px;
     }
+}
+
+.optional,.necessary{
+    display: none;
+}
+
+.optional.active-items,.necessary.active-items{
+    display: block;
+}
+
+.tab{
+    margin-top: 1%;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4c4c4;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: ease-in-out 0.12s;
+}
+
+.switchtabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    align-self: baseline;
+    margin-left: 4.52%;
+}
+
+.tab.active{
+    background-color: #EBEBEB;
 }
