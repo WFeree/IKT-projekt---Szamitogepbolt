@@ -19,6 +19,7 @@ body {
 
 .container{
     margin: 1%;
+    margin-bottom: 5%;
     margin-top: 0;
     background-color: #EBEBEB;
     width: 90vw;
@@ -99,10 +100,20 @@ body {
     justify-content: center;
     border-radius: 50%;
     left: 85vw;
-    top: 75vh;
+    top: 80vh;
     cursor: pointer;
     z-index: 100;
     transition: left 0.4s ease;
+}
+
+.delete{
+    background-color: rgb(223, 12, 12);
+    border:  0;
+    border-radius: 5px;
+    color: white;
+    width: 30px;
+    aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .cart-count {

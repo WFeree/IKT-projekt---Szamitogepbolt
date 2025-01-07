@@ -219,10 +219,10 @@ window.onload = function () {
             let item = retrievedData[i];
 
             if (item.activated) {
-                piece.children[0].innerText = item.name || "";
-                piece.children[1].innerText = item.brand || "";
-                piece.children[2].innerText = item.rating || "";
-                piece.children[3].innerText = item.price || "";
+                piece.children[0].innerText = item.name;
+                piece.children[1].innerText = item.brand;
+                piece.children[2].innerText = item.rating;
+                piece.children[3].innerText = item.price;
                 piece.classList.add("active");
 
                 const addButton = piece.parentElement.querySelector(`#add-part`);
@@ -230,6 +230,32 @@ window.onload = function () {
                     addButton.classList.add("hidden");
                 }
             }
+            else{
+                piece.classList.remove("active");
+                const addButton = piece.parentElement.querySelector(`#add-part`);
+                if (addButton) {
+                    addButton.classList.remove("hidden");
+                }
+            }
         }
     }
 };
+
+function deleteElement(element) {
+    let fullParent = element.parentElement.parentElement
+    let btn = fullParent.querySelector("#add-part")
+    element.parentElement.classList.remove("active")
+    btn.classList.remove("hidden")
+    console.log(fullParent);
+    for (let i = 0; i < data.length; i++) {
+        if (element.parentElement.classList.contains(data[i].parentId)) {
+            console.log(data[i].parentId)
+            data[i].name = ""
+            data[i].brand = ""
+            data[i].rating = ""
+            data[i].price = ""
+            data[i].activated = false
+        }
+    }
+    localStorage.setItem("data", JSON.stringify(data));
+}
