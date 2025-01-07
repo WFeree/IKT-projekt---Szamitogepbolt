@@ -19,6 +19,7 @@ body {
 
 .container{
     margin: 1%;
+    margin-bottom: 5%;
     margin-top: 0;
     background-color: #EBEBEB;
     width: 90vw;
@@ -71,6 +72,11 @@ body {
     color: white;
     border: #306d92 2px solid;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
 }
 
 .categories{
@@ -81,13 +87,8 @@ body {
     color: rgb(157, 157, 157);
     border-bottom: 2px solid rgb(157, 157, 157);
     margin-bottom: 3%;
-
 }
 
-.categories p{
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
 .cart-icon {
     position: fixed;
@@ -99,10 +100,20 @@ body {
     justify-content: center;
     border-radius: 50%;
     left: 85vw;
-    top: 75vh;
+    top: 80vh;
     cursor: pointer;
     z-index: 100;
     transition: left 0.4s ease;
+}
+
+.delete{
+    background-color: rgb(223, 12, 12);
+    border:  0;
+    border-radius: 5px;
+    color: white;
+    width: 30px;
+    aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .cart-count {
@@ -247,4 +258,112 @@ nav{
 
 .tab.active{
     background-color: #EBEBEB;
+}
+
+.card{
+    user-select: none;
+    width: 250px;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: fit-content;
+    height: 300px;
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    display: block;
+    .card-top{
+        height: 120px;
+        input[type="checkbox"]{
+            top: 12px;
+        }
+        .prod-img{
+            width: 120px;
+            height: auto;
+            float: right;
+        }
+    }
+    .card-mid{
+        .prod-name{
+            font-size: 22px;
+        }
+        .prod-detail{
+            .detail-elem{
+                display: flex;
+                gap: .5rem;
+                .detail-type{
+                    color: rgb(139, 139, 139);
+                }
+                .detail-more{
+                    text-decoration: underline;
+                    color: var(--sec-red);
+                    cursor: pointer;
+                }
+            }
+            .detail-wrapper{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .card-bot{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: .3rem 0;
+        .prod-select{
+            padding: .5rem 1rem;
+            border-radius: 8px;
+            border: none;
+            background-color: #E61F26;
+            color: white;
+            font-weight: bold;
+            transition-duration: .2s;
+        }
+        .prod-select:hover{
+            background-color: #b10006;
+            cursor: pointer;
+        }
+        .prod-price{
+            font-size: 22px;
+        }
+    }
+}
+
+.part-pick{
+    width: 80vw;
+    height: 90vh;
+    display: none;
+    position: fixed;
+    border-radius: 10px;
+    border: 2px solid #c4c4c4;
+    bottom: 5%;
+    overflow-y: scroll;
+    transition: ease-in-out 1s;
+}
+
+.part-pick.active{
+    background-color: #ffffff;
+    display: flex;
+    padding: 10px;
+    animation: grow 0.3s
+}
+
+.selected-piece{
+    width: 90%;
+    height: 100%;
+    display: none;
+}
+
+.selected-piece.active{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@keyframes grow {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
