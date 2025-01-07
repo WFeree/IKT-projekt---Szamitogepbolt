@@ -2,6 +2,7 @@
 
 let data = [
     Motherboard = {
+        activated: false,
         parentId: "0",
         name: "",
         brand: "",
@@ -9,6 +10,7 @@ let data = [
         price: ""
     },
     Processor = {
+        activated: false,
         parentId: "1",
         name: "",
         brand: "",
@@ -16,6 +18,7 @@ let data = [
         price: ""
     },
     Memory = {
+        activated: false,
         parentId: "2",
         name: "",
         brand: "",
@@ -23,6 +26,7 @@ let data = [
         price: ""
     },
     Graphics = {
+        activated: false,
         parentId: "3",
         name: "",
         brand: "",
@@ -30,6 +34,7 @@ let data = [
         price: ""
     },
     HDD = {
+        activated: false,
         parentId: "4",
         name: "",
         brand: "",
@@ -37,6 +42,7 @@ let data = [
         price: ""
     },
     Monitor = {
+        activated: false,
         parentId: "5",
         name: "",
         brand: "",
@@ -44,6 +50,7 @@ let data = [
         price: ""
     },
     Mouse = {
+        activated: false,
         parentId: "6",
         name: "",
         brand: "",
@@ -51,6 +58,7 @@ let data = [
         price: ""
     },
     Keyboard = {
+        activated: false,
         parentId: "7",
         name: "",
         brand: "",
@@ -175,7 +183,7 @@ function deleteActive(element) {
 
             data[i].rating = fullParent.querySelector(".review").children.length
 
-            
+            data[i].activated = true            
         }
         
     }
@@ -192,4 +200,36 @@ function deleteActive(element) {
             
         }
     }
+
+    localStorage.setItem("data", JSON.stringify(data));
 }
+
+window.onload = function () {
+    const retrievedData = JSON.parse(localStorage.getItem("data"));
+
+    if (retrievedData && Array.isArray(retrievedData)) {
+        for (let i = 0; i < retrievedData.length; i++) {
+            data[i] = retrievedData[i];
+        }
+    }
+
+    if (retrievedData && Array.isArray(retrievedData)) {
+        for (let i = 0; i < retrievedData.length; i++) {
+            let piece = showedPieces[i];
+            let item = retrievedData[i];
+
+            if (item.activated) {
+                piece.children[0].innerText = item.name || "";
+                piece.children[1].innerText = item.brand || "";
+                piece.children[2].innerText = item.rating || "";
+                piece.children[3].innerText = item.price || "";
+                piece.classList.add("active");
+
+                const addButton = piece.parentElement.querySelector(`#add-part`);
+                if (addButton) {
+                    addButton.classList.add("hidden");
+                }
+            }
+        }
+    }
+};

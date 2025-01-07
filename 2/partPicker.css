@@ -319,12 +319,12 @@ nav{
 
 .part-pick{
     width: 80vw;
-    height: 80vh;
+    height: 90vh;
     display: none;
     position: fixed;
     border-radius: 10px;
     border: 2px solid #c4c4c4;
-    bottom: 10%;
+    bottom: 5%;
     overflow-y: scroll;
     transition: ease-in-out 1s;
 }
