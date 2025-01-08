@@ -12,7 +12,7 @@
                     
                     <div class="card-top">
                         <input type="checkbox" name="" id="" hidden> <!-- JS Változtatja -->
-                        <img class="prod-img" src="uploads/<?= $c["file"] ?>">
+                        <img class="prod-img" src="/uploads/<?= $c["file"] ?>">
                     </div>
 
                     <div class="card-mid">

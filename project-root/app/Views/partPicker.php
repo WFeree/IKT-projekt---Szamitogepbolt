@@ -1,9 +1,10 @@
-<div class="part-pick Motherboard 0">
+
+    <div class="part-pick Motherboard 0">
         <div class="card">
                     
             <div class="card-top">
                 <input type="checkbox" name="" id="" hidden> <!-- JS Változtatja -->
-                <img class="prod-img" src="../3/src/prod1.png">
+                <img class="prod-img" src="img/prod1.png">
             </div>
 
             <div class="card-mid">
@@ -352,7 +353,7 @@
     </div>
     <div class="cart-shadow-overlay"></div>
     <nav>
-        <img src="img/logo_big.png" alt="Logo" class="nav-elements" id="nav-logo">
+        <img src="../3/src/logo_big.png" alt="Logo" class="nav-elements" id="nav-logo">
     </nav>
     <div class="switchtabs">
         <div class="tab active essential"><p>Essentials</p></div>

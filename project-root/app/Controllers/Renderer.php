@@ -26,11 +26,7 @@ class Renderer extends BaseController
         $CompModel = new ComponentModel();
         $extra = [
             "cssfiles" => ["partPicker"],
-            "components" => $CompModel->getAll()
         ];
-        foreach($extra["components"] as &$c){
-            $c["file"] = $c["id"] . "/" . $c["file_upload"];
-        }
         return $this->show("partPicker", $extra);
     }
     public function create_GET(){

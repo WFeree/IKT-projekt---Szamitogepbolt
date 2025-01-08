@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 use App\Models\ComponentModel;
+use App\Controllers\Renderer;
+use CodeIgniter\Controller;
+use stdClass;
 
 class PartsController extends BaseController
 {
@@ -12,6 +15,9 @@ class PartsController extends BaseController
         foreach($CompModel->getCategories() as $cat){
             $catlist .= $cat . ", ";
         }
+
+       
+
         if(!$this->validate([
             "name" => "required|is_unique[components.name]|alpha_numeric_punct",
             "price" => "required|decimal|greater_than[0]",
@@ -32,12 +38,18 @@ class PartsController extends BaseController
             return redirect()->back();
         }
         $safedata = $this->validator->getValidated();
-        
-        
+
+        $details = new stdClass();
+        $details->array = [];
+        foreach(array_keys($data["dvalues"]) as $key){
+            $details->array[$key] = $data["dvalues"][$key];
+        }
+        $jsonDetails = json_encode($details->array);
+
         $img = $this->request->getFile('picture');
         $CompModel->save([
             'name' => $safedata["name"],
-            'details' => $safedata["details"],
+            'details' => $jsonDetails,
             'price' => $safedata["price"],
             'rating' => $safedata["rating"],
             'category' => $safedata["category"],
@@ -46,7 +58,18 @@ class PartsController extends BaseController
         ]);
         $filepath = ROOTPATH . '/public/uploads/' . $CompModel->getInsertID() . '/';
         $img->move($filepath);
-
         return redirect()->to("/");
+    }
+
+    public function chooser($category){
+        $ComponentModel = new ComponentModel();
+        $results = $ComponentModel->where("category", $category)->findAll();
+
+        $components = [];
+        foreach($results as &$r){
+            $r["file"] = $r["id"] . "/" . $r["file_upload"];
+        }
+
+        return Renderer::show("arukereso", ["cssfiles" => ["arukereso"], "components" => $results]);
     }
 }

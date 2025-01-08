@@ -18,8 +18,8 @@
     <div class="details"></div>
 
     <label for="rating">Rating</label>
-    <input type="number" name="rating" id="rating" step="0.1", max="5", min="0">
-    <input type="file" name="picture">
+    <input type="number" name="rating" id="rating" step="0.1", max="5", min="0"><br>
+    <input type="file" name="picture"><br>
     <input type="submit" value="Send">
 
 </form>
