@@ -75,7 +75,8 @@ nav{
     display: block;
     .card-top{
         height: 120px;
-        input[type="checkbox"]{
+        .checkbox{
+            display: none;
             top: 12px;
         }
         .prod-img{
