@@ -12,3 +12,14 @@ function expandClick(ele){
     ele.nextElementSibling.classList.remove("hidden")
     ele.classList.add("hidden")
 }
+function select(name, brand, rating, price, category){
+    obj = {
+        "name": name,
+        "brand": brand,
+        "rating": rating,
+        "price": price,
+        "category": category
+    }
+    localStorage.setItem("items." + category, JSON.stringify(obj))
+    location.href = "/"
+}

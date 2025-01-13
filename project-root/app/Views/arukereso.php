@@ -42,7 +42,7 @@
 
                     <div class="card-bot">
                         <strong class="prod-price"><?php echo $c["price"] ?> Ft</strong>
-                        <button class="prod-select">SELECT</button>
+                        <button class="prod-select" onclick="select('<?= $c['price']; ?>', '<?= $c['brand']; ?>', '<?= $c['rating']; ?>', '<?= $c['price']; ?>', '<?= $c['category']; ?>')">SELECT</button>
                     </div>
                 </div>
                 <?php endforeach ?>
