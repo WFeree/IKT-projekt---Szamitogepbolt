@@ -21,7 +21,16 @@
 
                         <div class="prod-detail">
                             <div class="detail-wrapper">
-                                <?php foreach(array_slice(array_keys(get_object_vars(json_decode($c["details"]))), 0,2) as $k): ?>
+                                <?php foreach(array_slice(array_keys(get_object_vars(json_decode($c["details"]))), 0,1) as $k): ?>
+                                    <div class="detail-elem">
+                                        <p class="detail-type"><?php echo $k ?></p>
+                                        <p class="detail-value"><?php echo get_object_vars(json_decode($c["details"]))[$k] ?></p>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                            <a href="#" onclick="expandClick(this)">More</a>
+                            <div class="detail-wrapper hidden extra">
+                                <?php foreach(array_slice(array_keys(get_object_vars(json_decode($c["details"]))), 1) as $k): ?>
                                     <div class="detail-elem">
                                         <p class="detail-type"><?php echo $k ?></p>
                                         <p class="detail-value"><?php echo get_object_vars(json_decode($c["details"]))[$k] ?></p>
@@ -39,4 +48,4 @@
                 <?php endforeach ?>
     </div>
         </div>
-    <script src="/js/script.js"></script>
+    <script src="/js/arukereso.js" defer></script>

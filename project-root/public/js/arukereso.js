@@ -7,3 +7,8 @@ CompareBtn.addEventListener("click", ()=>{
         checkbox.style.display = (checkbox.style.display === "block" || checkbox.style.display === "") ? "none" : "block";
     }
 });
+
+function expandClick(ele){
+    ele.nextElementSibling.classList.remove("hidden")
+    ele.classList.add("hidden")
+}
