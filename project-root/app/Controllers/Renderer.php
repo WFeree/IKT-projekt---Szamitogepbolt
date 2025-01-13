@@ -29,6 +29,7 @@ class Renderer extends BaseController
         ];
         return $this->show("partPicker", $extra);
     }
+    
     public function create_GET(){
         $ComponentM = new ComponentModel();
         $options = $ComponentM->getCategories();

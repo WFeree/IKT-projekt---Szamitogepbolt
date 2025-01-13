@@ -18,8 +18,11 @@ function select(name, brand, rating, price, category){
         "brand": brand,
         "rating": rating,
         "price": price,
-        "category": category
+        "category": category,
+        "activated": true
     }
-    localStorage.setItem("items." + category, JSON.stringify(obj))
+    let data = JSON.parse(localStorage.getItem("data") || "[]");
+    data.push(obj)
+    localStorage.data = JSON.stringify(data)
     location.href = "/"
 }
