@@ -30,7 +30,7 @@ class PartsController extends BaseController
                     'uploaded[picture]',
                     'is_image[picture]',
                     'mime_in[picture,image/jpg,image/jpeg,image/png]',
-                    'max_dims[picture,512,512]',
+                    'max_dims[picture,1024,1024]',
                 ],
             ],
         ], $data)){

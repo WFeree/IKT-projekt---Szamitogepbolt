@@ -11,7 +11,7 @@
                     
                     <div class="card-top">
                         <input type="checkbox" name="" class="checkbox" > <!-- JS Változtatja -->
-                        <img class="prod-img" src="<?= $c["imgpath"] ?>">
+                        <img class="prod-img" src="/uploads//<?= $c["file"] ?>">
                     </div>
 
                     <div class="card-mid">
@@ -21,10 +21,10 @@
 
                         <div class="prod-detail">
                             <div class="detail-wrapper">
-                                <?php foreach(array_keys($c["details"]) as $k): ?>
+                                <?php foreach(array_slice(array_keys(get_object_vars(json_decode($c["details"]))), 0,2) as $k): ?>
                                     <div class="detail-elem">
                                         <p class="detail-type"><?php echo $k ?></p>
-                                        <p class="detail-value"><?php echo $c["details"][$k] ?></p>
+                                        <p class="detail-value"><?php echo get_object_vars(json_decode($c["details"]))[$k] ?></p>
                                     </div>
                                 <?php endforeach ?>
                             </div>
