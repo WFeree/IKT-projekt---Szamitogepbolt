@@ -14,7 +14,7 @@ class Renderer extends BaseController
 
         $meta = [
             "title" => $extra_data["title"] ?? "PC Part Picker",
-            "cssfiles" => $extra_data["cssfiles"] ?? [],
+            "cssfiles" => $extra_data["cssfiles"] ?? [strtolower($page)],
         ];
         $context = $extra_data;
         return view("templates/head", $meta)

@@ -10,8 +10,8 @@
                 <div class="card">
                     
                     <div class="card-top">
-                        <input type="checkbox" name="" class="checkbox" > <!-- JS Változtatja -->
-                        <img class="prod-img" src="/uploads//<?= $c["file"] ?>">
+                    <input type="checkbox" name="" class="checkbox" data-name="<?= htmlspecialchars($c['name']); ?>" data-brand="<?= htmlspecialchars($c['brand']); ?>"data-price="<?= htmlspecialchars($c['price']); ?>"data-category="<?= htmlspecialchars($c['category']); ?>"> <!-- JS Változtatja -->
+                    <img class="prod-img" src="/uploads//<?= $c["file"] ?>">
                     </div>
 
                     <div class="card-mid">
@@ -46,6 +46,10 @@
                     </div>
                 </div>
                 <?php endforeach ?>
-    </div>
         </div>
+        <div id="compare-bar" style="display: none;">
+            <h4>Kiválasztott termékek:</h4>
+            <ul id="compare-list"></ul>
+        </div>
+    </div>
     <script src="/js/arukereso.js" defer></script>

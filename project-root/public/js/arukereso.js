@@ -26,3 +26,39 @@ function select(name, brand, rating, price, category){
     localStorage.data = JSON.stringify(data)
     location.href = "/"
 }
+
+//
+
+document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    const compareBar = document.getElementById('compare-bar');
+    const compareList = document.getElementById('compare-list');
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const name = checkbox.getAttribute('data-name');
+            const brand = checkbox.getAttribute('data-brand');
+            const price = checkbox.getAttribute('data-price');
+            const category = checkbox.getAttribute('data-category');
+
+            if (checkbox.checked) {
+                // Új elem hozzáadása a listához
+                const listItem = document.createElement('li');
+                listItem.textContent = `${brand} ${name} - ${price} Ft [${category}]`;
+                listItem.dataset.name = name; // Az azonosításhoz
+                compareList.appendChild(listItem);
+            } else {
+                // Elem eltávolítása
+                const listItem = compareList.querySelector(`[data-name="${name}"]`);
+                if (listItem) listItem.remove();
+            }
+
+            // Az alsó sáv megjelenítése/elrejtése
+            if (compareList.children.length > 0) {
+                compareBar.style.display = 'block';
+            } else {
+                compareBar.style.display = 'none';
+            }
+        });
+    });
+});
