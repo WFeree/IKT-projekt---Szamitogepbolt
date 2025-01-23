@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const compareBar = document.getElementById('compare-bar');
     const compareList = document.getElementById('compare-list');
 
-    checkboxes.forEach(checkbox => {
+    checkboxes.forEach((checkbox) => {
         checkbox.addEventListener('change', () => {
             const name = checkbox.getAttribute('data-name');
             const brand = checkbox.getAttribute('data-brand');
@@ -42,15 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const category = checkbox.getAttribute('data-category');
 
             if (checkbox.checked) {
-                // Új elem hozzáadása a listához
                 const listItem = document.createElement('li');
                 listItem.textContent = `${brand} ${name} - ${price} Ft [${category}]`;
-                listItem.dataset.name = name; // Az azonosításhoz
+                listItem.dataset.name = name; // Ez az azonosításhoz szükséges
                 compareList.appendChild(listItem);
-            } else {
+            }
+            else {
                 // Elem eltávolítása
                 const listItem = compareList.querySelector(`[data-name="${name}"]`);
                 if (listItem) listItem.remove();
+            }
+            if (!checkbox.checked) {
+                const listItem = compareList.querySelector(`[data-name="${name}"]`);
+                if (listItem) {
+                    listItem.remove();
+                }
             }
 
             // Az alsó sáv megjelenítése/elrejtése
